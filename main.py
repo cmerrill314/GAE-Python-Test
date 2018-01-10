@@ -4,13 +4,11 @@
 # Prints Current Time to a GAE Application
 
 import webapp2
-import time
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        localtime = time.asctime(time.localtime(time.time()))
-        self.response.write("Local current time :", localtime)
+        self.response.write("Hello!")
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
